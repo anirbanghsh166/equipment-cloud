@@ -1,0 +1,120 @@
+/* Basic styling for form elements (optional) */
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+h1 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.backButton {
+    background-color: #f0ad4e;
+    margin-left: 76%;
+}
+
+button:nth-child(2) {
+    background-color: #f0ad4e;
+}
+
+/* Centered card styling */
+.add-equipment {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 20px;
+    width: 500px; /* Adjust width as needed */
+    margin: 0 auto; /* Center the card horizontally */
+    position: relative; /* Needed for modal-like effect */
+    top: 50%; /* Position the card vertically */
+    transform: translateY(-50%); /* Center the card vertically */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+}
+
+
+.add-equipment::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: -1; /* Place the overlay behind the card */
+    opacity: 0; /* Initially hide the overlay */
+    transition: opacity 0.3s ease-in-out; /* Add a smooth transition for the overlay */
+}
+
+.add-equipment.active::before {
+    opacity: 1; /* Show the overlay on modal open */
+}
+form{
+    padding: 2rem 32rem;
+}
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: 2px solid #007bff; /* Blue border */
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Box shadow */
+    max-width: 400px; /* Set maximum width */
+    width: 80%; /* Adjust width as needed */
+  }
+  
+  .popup-content {
+    text-align: center;
+    font-size: 18px; /* Increase font size */
+    color: #333; /* Dark text color */
+  }
+  
+  .popup button {
+    padding: 10px 20px;
+    background-color: #007bff; /* Blue background */
+    color: #fff; /* White text color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .popup button:hover {
+    background-color: #0056b3; /* Darker shade of blue on hover */
+  }

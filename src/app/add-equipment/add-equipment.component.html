@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Equipment</title>
+</head>
+
+<body>
+  <div class="popup" *ngIf="showPopup">
+    <div class="popup-content">
+      <p>{{addResponse}}</p>
+    </div>
+  </div>
+  <h1>Add Equipment</h1>
+  <form [formGroup]="equipmentForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" id="name" formControlName="name">
+    </div>
+    <div class="form-group">
+      <label for="purchase">Purchase Date:</label>
+      <input type="date" id="purchase" formControlName="purchase">
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" formControlName="email">
+    </div>
+    <div class="form-group">
+      <label for="scheduleMaintainance">Schedule Maintenance:</label>
+      <input type="date" id="scheduleMaintainance" formControlName="scheduleMaintainance">
+    </div>
+    <div class="form-group">
+      <label for="emailAlert">Email Alert:</label>
+      <select id="emailAlert" formControlName="emailAlert">
+        <option value=0>Low</option>
+        <option value=1>Medium</option>
+        <option value=2>High</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="description">Description:</label>
+      <textarea id="description" formControlName="description"></textarea>
+    </div>
+    <div class="row">
+          <button type="submit" [disabled]="equipmentForm.invalid">Add</button>
+          <button class="backButton" type="submit" [routerLink]="'/equipmentList'">Back</button>
+    </div>
+    
+  </form>
+
+</body>
+
+</html>
